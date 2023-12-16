@@ -1,273 +1,281 @@
-// import dotenv from "dotenv";
-// dotenv.config();
+import dotenv from "dotenv";
+dotenv.config();
 
-// import jsonServer from "json-server";
-// import path from "path";
-// import { join, dirname } from "node:path";
-// import { fileURLToPath } from "node:url";
-// import ShortUniqueId from "short-unique-id";
-// import bcrypt from "bcrypt";
-// import jwt from "jsonwebtoken";
-// import { LowSync } from "lowdb";
-// import { JSONFileSync } from "lowdb/node";
+import jsonServer from "json-server";
+import path from "path";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import ShortUniqueId from "short-unique-id";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+import { LowSync } from "lowdb";
+import { JSONFileSync } from "lowdb/node";
 
-// import protectedRoutesConfig from "./serverConfig.js";
+import protectedRoutesConfig from "./serverConfig.js";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(fileURLToPath(import.meta.url));
-// const uid = new ShortUniqueId({ length: 10 });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const uid = new ShortUniqueId({ length: 10 });
 
-// const dbFile = process.env.DB || 'db.json';
-// const serverPort = process.env.REACT_APP_JSON_SERVER_PORT || 5000;
-// const staticDirectoryName = process.env.STATIC_FILES || 'server-files';
+const dbFile = process.env.DB || 'db.json';
+const serverPort = process.env.REACT_APP_JSON_SERVER_PORT || 5000;
+const staticDirectoryName = process.env.STATIC_FILES || 'server-files';
 
-// const file = path.join(__dirname, dbFile);
-// const adapter = new JSONFileSync(file);
-// const db = new LowSync(adapter);
+const file = path.join(__dirname, dbFile);
+const adapter = new JSONFileSync(file);
+const db = new LowSync(adapter);
 
-// // db.read();
-// // db.data.users.push({ three: "four" });
-// // db.write();
+// db.read();
+// db.data.users.push({ three: "four" });
+// db.write();
 
-// const server = jsonServer.create();
+const server = jsonServer.create();
 
-// // foreign key suffix as second parameter to the module. Below code sets it to dummy
-// // it fixes delete problem but causes expansion problems.
-// const router = jsonServer.router(join(__dirname, dbFile),{
-//   foreignKeySuffix: 'dummy'
-// });
+// foreign key suffix as second parameter to the module. Below code sets it to dummy
+// it fixes delete problem but causes expansion problems.
+const router = jsonServer.router(join(__dirname, dbFile),{
+  foreignKeySuffix: 'dummy'
+});
 
-// const staticDir = path.join(__dirname, staticDirectoryName);
-// const middlewares = jsonServer.defaults({static: staticDir});
+const staticDir = path.join(__dirname, staticDirectoryName);
+const middlewares = jsonServer.defaults({static: staticDir});
 
-// server.use(middlewares);
-// server.use(jsonServer.bodyParser);
+server.use(middlewares);
+server.use(jsonServer.bodyParser);
 
-// // config
-// const protectedRoutes = protectedRoutesConfig.protectedRoutes;
+// config
+const protectedRoutes = protectedRoutesConfig.protectedRoutes;
 
-// // Authorization logic
-// server.use((req, res, next) => {
-//   let NeedsAuthorization = false;
+// Authorization logic
+server.use((req, res, next) => {
+  let NeedsAuthorization = false;
 
-//   for (let i = 0; i < protectedRoutes.length; i++) {
-//     let { route, methods } = protectedRoutes[i];
+  for (let i = 0; i < protectedRoutes.length; i++) {
+    let { route, methods } = protectedRoutes[i];
 
-//     // if ((route === 'GET' && ))
+    // if ((route === 'GET' && ))
 
-//     if ((req.url).startsWith(route)) {
-//       if (methods.includes(req.method)) {
-//         NeedsAuthorization = true;
-//         break;
-//       }
-//     }
-//   }
+    if ((req.url).startsWith(route)) {
+      if (methods.includes(req.method)) {
+        NeedsAuthorization = true;
+        break;
+      }
+    }
+  }
 
-//   if (NeedsAuthorization) {
-//     const authHeader = req.headers["authorization"];
-//     const token = authHeader && authHeader.split(" ")[1];
-//     if (!authHeader || !token)
-//       return res
-//         .status(403)
-//         .send(
-//           "Its a protected route/method. You need an auth token to access it."
-//         );
+  if (NeedsAuthorization) {
+    const authHeader = req.headers["authorization"];
+    const token = authHeader && authHeader.split(" ")[1];
+    if (!authHeader || !token)
+      return res
+        .status(403)
+        .send(
+          "Its a protected route/method. You need an auth token to access it."
+        );
 
-//     jwt.verify(token, process.env.ACCESS_TOKEN_SECRET || "62a798775294eda38d9d5bdb57cfae9d1fff7a550c11c06ef2888fc1af641c09291d17f07f04156356fd86223256fbcc026e791a80a876fe7b14d4ba30ec185d", (err, user) => {
-//       if (err)
-//         return res
-//           .status(403)
-//           .send("Some error occurred wile verifying token.");
-//       req.user = user;
-//       next();
-//     });
-//   } else {
-//     next();
-//   }
-// });
+    jwt.verify(token, process.env.ACCESS_TOKEN_SECRET || "62a798775294eda38d9d5bdb57cfae9d1fff7a550c11c06ef2888fc1af641c09291d17f07f04156356fd86223256fbcc026e791a80a876fe7b14d4ba30ec185d", (err, user) => {
+      if (err)
+        return res
+          .status(403)
+          .send("Some error occurred wile verifying token.");
+      req.user = user;
+      next();
+    });
+  } else {
+    next();
+  }
+});
 
-// // default id & created at 
-// server.use((req, res, next) => {
-//   if (req.method === "POST") {
-//     req.body.createdAt = Date.now();
-//   }
+// default id & created at 
+server.use((req, res, next) => {
+  if (req.method === "POST") {
+    req.body.createdAt = Date.now();
+  }
 
-//   if (req.method === "POST" && !req.body.id) {
-//     req.body.id = uid();
-//   }
+  if (req.method === "POST" && !req.body.id) {
+    req.body.id = uid();
+  }
 
-//   if (req.method === "POST" && req.user && !req.body.userId) {
-//     req.body.userId = req.user.id;
-//   }
+  if (req.method === "POST" && req.user && !req.body.userId) {
+    req.body.userId = req.user.id;
+  }
 
-//   next();
-// });
+  next();
+});
 
-// // registration logic
-// // server.post("/users", (req, res) => {
-// //   if (
-// //     !req.body ||
-// //     !req.body.username ||
-// //     !req.body.password ||
-// //     !req.body.email
-// //   ) {
-// //     return res
-// //       .status(400)
-// //       .send("Bad request, requires username, password & email.");
-// //   }
-
-// //   db.read();
-// //   const users = db.data.users;
-// //   let largestId = 0;
-// //   users.forEach((user) => {
-// //     if (user.id > largestId) largestId = user.id;
-// //   });
-
-// //   const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-// //   const newId = largestId + 1;
-// //   const newUserData = {
-// //     username: req.body.username,
-// //     password: hashedPassword,
-// //     email: req.body.email,
-// //     firstname: req.body.firstname || "",
-// //     lastname: req.body.lastname || "",
-// //     avatar: req.body.avatar || "",
-// //     createdAt: Date.now(),
-// //     id: newId,
-// //   };
-
-// //   db.data.users.push(newUserData);
-
-// //   db.write();
-
-// //   res.status(201).send(newUserData);
-// // });
-
-
-// server.post('/users',(req,res) =>{
-//   const {email,password,username} = req.body;
-
-//   const existingUser = router.db.get('users').find({email}).value();
-//   if(existingUser){
-//       return res.status(400).json({message: 'User exists'});
-//   }
-//   const lastUserId = router.db.get('users').value().reduce((maxId,user) =>Math.max(maxId,user.id),0);
-//   const newUserId = lastUserId +1;
-//   const newUser = {
-//       id:newUserId,
-//       email,password,username
-//   }
-//   router.db.get('users').push(newUser).write();
-//   res.json({message: 'User Registered'});
-// })
-
-// // login/sign in logic
-// server.post("/login", (req, res) => {
-//   if (!req.body || !req.body.username || !req.body.password) {
+// registration logic
+// server.post("/users", (req, res) => {
+//   if (
+//     !req.body ||
+//     !req.body.username ||
+//     !req.body.password ||
+//     !req.body.email
+//   ) {
 //     return res
 //       .status(400)
-//       .send("Bad request, requires username & password both.");
+//       .send("Bad request, requires username, password & email.");
 //   }
 
 //   db.read();
 //   const users = db.data.users;
-//   const user = users.find((u) => u.username === req.body.username);
-//   if (user == null) {
-//     return res.status(400).send(`Cannot find user: ${req.body.username}`);
-//   }
+//   let largestId = 0;
+//   users.forEach((user) => {
+//     if (user.id > largestId) largestId = user.id;
+//   });
 
-//   if (bcrypt.compareSync(req.body.password, user.password)) {
-//     // creating JWT token
-//     const accessToken = generateAccessToken(user);
-//     return res.send({
-//       accessToken: accessToken,
-//       user: user
-//     });
-//   } else {
-//     res.send("Not allowed, name/password mismatch.");
-//   }
+//   const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+//   const newId = largestId + 1;
+//   const newUserData = {
+//     username: req.body.username,
+//     password: hashedPassword,
+//     email: req.body.email,
+//     firstname: req.body.firstname || "",
+//     lastname: req.body.lastname || "",
+//     avatar: req.body.avatar || "",
+//     createdAt: Date.now(),
+//     id: newId,
+//   };
+
+//   db.data.users.push(newUserData);
+
+//   db.write();
+
+//   res.status(201).send(newUserData);
 // });
 
-// function generateAccessToken(user) {
-//   return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET || "62a798775294eda38d9d5bdb57cfae9d1fff7a550c11c06ef2888fc1af641c09291d17f07f04156356fd86223256fbcc026e791a80a876fe7b14d4ba30ec185d", { expiresIn: "3h" });
-// }
 
-// // To modify responses, overwrite router.render method:
-// // In this example, returned resources will be wrapped in a body property
-// // router.render = (req, res) => {
-// //   res.jsonp({
-// //     body: res.locals.data,
-// //   });
-// // };
+server.post('/users',(req,res) =>{
+  const {email,password,username} = req.body;
 
-// server.use(router);
-
-// let nodeEnv = process.env.NODE_ENV || 'production'
-
-
-// const PORT = nodeEnv == 'development' ? `http://localhost:${+serverPort}/` : `PORT: ${+serverPort}`
-
-// server.listen(+serverPort, () => {
-//   console.log(
-//     `JSON Server is running at ${PORT} in ${nodeEnv } ENV.`
-//   );
-// });
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
-const bodyParser = require('body-parser');
-// Use middleware to parse JSON request bodies
-server.use(bodyParser.json());
-
-//LOGIN
-server.post('/login',(req,res)=>{
-    const {email,password,username} = req.body;
-
-    const user = router.db.get('users').find({email}).value();
-    if(!user){
-        return res.status(500).json("Invalid User")
-    }
-    if(password === user.password){
-        const token = "Valid User"
-        res.status(200).json({user})
-    }
-    else{
-        return res.status(401).json({message:'Invalid credentials'})
-    }
+  const existingUser = router.db.get('users').find({email}).value();
+  if(existingUser){
+      return res.status(400).json({message: 'User exists'});
+  }
+  const lastUserId = router.db.get('users').value().reduce((maxId,user) =>Math.max(maxId,user.id),0);
+  const newUserId = lastUserId +1;
+  const newUser = {
+      id:newUserId,
+      email,password,username
+  }
+  router.db.get('users').push(newUser).write();
+  res.json({message: 'User Registered'});
 })
 
-// Register
-server.post('/register',(req,res) =>{
-    const {email,password,username} = req.body;
+// login/sign in logic
+server.post("/login", (req, res) => {
+  if (!req.body || !req.body.username || !req.body.password) {
+    return res
+      .status(400)
+      .send("Bad request, requires username & password both.");
+  }
 
-    const existingUser = router.db.get('users').find({email}).value();
-    if(existingUser){
-        return res.status(400).json({message: 'User exists'});
-    }
-    const lastUserId = router.db.get('users').value().reduce((maxId,user) =>Math.max(maxId,user.id),0);
-    const newUserId = lastUserId +1;
-    const newUser = {
-        id:newUserId,
-        email,password,username
-    }
-    router.db.get('users').push(newUser).write();
-    res.json({message: 'User Registered'});
-})
-// server.post('/hotels',(req,res) =>{
-//     const {name,address,price,discount,rating,image,region,country} = req.body;
-//     const hotelId = router.db.get('hotels').value().reduce((maxId,hotel) =>Math.max(maxId,hotel.id),0);
-//     const newhotelId = hotelId +1;
-//     const newhotel = {
-//         id:newhotelId,
-//         name,address,price,discount,rating,image,region,country
-//     }
-//     router.db.get('hotels').push(newhotel).write();
-//     res.json({newhotel});
-// })
-server.use(middlewares)
-server.use(router)
-const PORT = 5000;
-server.listen(PORT, () => {
-  console.log(`JSON Server is running on http://localhost:${PORT}`);
+  db.read();
+  const users = db.data.users;
+  const user = users.find((u) => u.username === req.body.username);
+  if (user == null) {
+    return res.status(400).send(`Cannot find user: ${req.body.username}`);
+  }
+
+  if (bcrypt.compareSync(req.body.password, user.password)) {
+    // creating JWT token
+    const accessToken = generateAccessToken(user);
+    return res.send({
+      accessToken: accessToken,
+      user: user
+    });
+  } else {
+    res.send("Not allowed, name/password mismatch.");
+  }
 });
+
+function generateAccessToken(user) {
+  return jwt.sign(user, process.env.ACCESS_TOKEN_SECRET || "62a798775294eda38d9d5bdb57cfae9d1fff7a550c11c06ef2888fc1af641c09291d17f07f04156356fd86223256fbcc026e791a80a876fe7b14d4ba30ec185d", { expiresIn: "3h" });
+}
+
+// To modify responses, overwrite router.render method:
+// In this example, returned resources will be wrapped in a body property
+// router.render = (req, res) => {
+//   res.jsonp({
+//     body: res.locals.data,
+//   });
+// };
+
+server.use(router);
+
+let nodeEnv = process.env.NODE_ENV || 'production'
+
+
+const PORT = nodeEnv == 'development' ? `http://localhost:${+serverPort}/` : `PORT: ${+serverPort}`
+
+server.listen(+serverPort, () => {
+  console.log(
+    `JSON Server is running at ${PORT} in ${nodeEnv } ENV.`
+  );
+});
+
+
+
+
+
+
+
+
+// const jsonServer = require('json-server')
+// const server = jsonServer.create()
+// const router = jsonServer.router('db.json')
+// const middlewares = jsonServer.defaults()
+// const bodyParser = require('body-parser');
+// // Use middleware to parse JSON request bodies
+// server.use(bodyParser.json());
+
+// //LOGIN
+// server.post('/login',(req,res)=>{
+//     const {email,password,username} = req.body;
+
+//     const user = router.db.get('users').find({email}).value();
+//     if(!user){
+//         return res.status(500).json("Invalid User")
+//     }
+//     if(password === user.password){
+//         const token = "Valid User"
+//         res.status(200).json({user})
+//     }
+//     else{
+//         return res.status(401).json({message:'Invalid credentials'})
+//     }
+// })
+
+// // Register
+// server.post('/register',(req,res) =>{
+//     const {email,password,username} = req.body;
+
+//     const existingUser = router.db.get('users').find({email}).value();
+//     if(existingUser){
+//         return res.status(400).json({message: 'User exists'});
+//     }
+//     const lastUserId = router.db.get('users').value().reduce((maxId,user) =>Math.max(maxId,user.id),0);
+//     const newUserId = lastUserId +1;
+//     const newUser = {
+//         id:newUserId,
+//         email,password,username
+//     }
+//     router.db.get('users').push(newUser).write();
+//     res.json({message: 'User Registered'});
+// })
+// // server.post('/hotels',(req,res) =>{
+// //     const {name,address,price,discount,rating,image,region,country} = req.body;
+// //     const hotelId = router.db.get('hotels').value().reduce((maxId,hotel) =>Math.max(maxId,hotel.id),0);
+// //     const newhotelId = hotelId +1;
+// //     const newhotel = {
+// //         id:newhotelId,
+// //         name,address,price,discount,rating,image,region,country
+// //     }
+// //     router.db.get('hotels').push(newhotel).write();
+// //     res.json({newhotel});
+// // })
+// server.use(middlewares)
+// server.use(router)
+// const PORT = 5000;
+// server.listen(PORT, () => {
+//   console.log(`JSON Server is running on http://localhost:${PORT}`);
+// });
