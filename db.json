@@ -66528,7 +66528,7 @@
       "name": "Paris",
       "country": "France",
       "description": "The City of Lights",
-      "price":"$499",
+      "price":"4990",
       "attractions": [
         "Eiffel Tower",
         "Louvre Museum",
@@ -66542,7 +66542,7 @@
       "name": "New York City",
       "country": "United States",
       "description": "The Big Apple",
-      "price":"$599",
+      "price":"5990",
       "attractions": [
         "Times Square",
         "Central Park",
@@ -66556,7 +66556,7 @@
       "name": "Tokyo",
       "country": "Japan",
       "description": "The Capital of Japan",
-      "price":"$899",
+      "price":"8990",
       "attractions": [
         "Tokyo Tower",
         "Shibuya Crossing",
@@ -66570,7 +66570,7 @@
       "country": "India",
       "name": "Kolkata",
       "description": "The Cultural Capital of India",
-      "price":"$699",
+      "price":"6990",
       "attractions": [
         "Victoria Memorial",
         "Howrah Bridge",
@@ -66584,7 +66584,7 @@
       "name": "Port Louis",
       "country": "Mauritius",
       "description": "The Capital of Mauritius",
-      "price":"$399",
+      "price":"3990",
       "attractions": [
         "Caudan Waterfront",
         "Pamplemousses Botanical Garden",
@@ -66598,7 +66598,7 @@
       "name": "Bern",
       "country": "Switzerland",
       "description": "The Capital of Switzerland",
-      "price":"$799",
+      "price":"7990",
       "attractions": [
         "Zytglogge (Clock Tower)",
         "Bern Munster (Cathedral)",
@@ -66612,7 +66612,7 @@
       "name": "Maui",
       "country": "United States",
       "description": "The Tropical Paradise of Hawaii",
-      "price":"$299",
+      "price":"2990",
       "attractions": [
         "Haleakalā National Park",
         "Road to Hana",
@@ -66626,7 +66626,7 @@
       "name": "Sout Dakota",
       "country": "United States",
       "description": "The Tropical Paradise of Hawaii",
-      "price":"$300",
+      "price":"3000",
       "attractions": [
         "Haleakalā National Park",
         "Road to Hana",
@@ -66640,7 +66640,7 @@
       "name": "Rome",
       "country":"Italy",
       "description": "The Capital of Italy",
-      "price":"$400",
+      "price":"4000",
       "attractions": [
         "Colosseum",
         "Roman Forum",
@@ -66654,7 +66654,7 @@
       "name": "Rio de Janeiro",
       "country":"France",
       "description": "The Marvelous City",
-      "price":"$600",
+      "price":"6000",
       "attractions": [
         "Christ the Redeemer",
         "Copacabana Beach",
@@ -66668,7 +66668,7 @@
       "name": "Sydney",
       "country":"Australia",
       "description": "The Harbour City",
-      "price":"$700",
+      "price":"7008",
       "attractions": [
         "Sydney Opera House",
         "Bondi Beach",
@@ -66682,7 +66682,7 @@
       "name": "Cape Town",
       "country": "South Africa",
       "description": "The Mother City",
-      "price":"$900",
+      "price":"9000",
       "attractions": [
         "Table Mountain",
         "Cape of Good Hope",
@@ -66696,7 +66696,7 @@
       "name": "Bangkok",
       "country": "Thailand",
       "description": "The City of Angels",
-      "price":"$200",
+      "price":"2000",
       "attractions": [
         "Grand Palace",
         "Wat Arun",
@@ -66710,7 +66710,7 @@
       "name": "Dubai",
       "country": "United Arab Emirates",
       "description": "The City of Gold",
-      "price":"$500",
+      "price":"4500",
       "attractions": [
         "Burj Khalifa",
         "Dubai Mall",
@@ -66724,7 +66724,7 @@
       "name": "Prague",
       "country": "Czech Republic",
       "description": "The City of a Hundred Spires",
-      "price":"$589",
+      "price":"4589",
       "attractions": [
         "Charles Bridge",
         "Prague Castle",
@@ -66738,7 +66738,7 @@
       "name": "Cairo",
       "country": "Egypt",
       "description": "The City of a Thousand Minarets",
-      "price":"$300",
+      "price":"7300",
       "attractions": [
         "Giza Pyramids",
         "The Sphinx",
@@ -66752,7 +66752,7 @@
       "name": "Rio de Janeiro",
       "country": "Brazil",
       "description": "The Marvelous City",
-      "price":"$300",
+      "price":"8300",
       "attractions": [
         "Christ the Redeemer",
         "Copacabana Beach",
@@ -66766,7 +66766,7 @@
       "name": "Amsterdam",
       "country": "Netherlands",
       "description": "The Venice of the North",
-      "price":"$800",
+      "price":"7800",
       "attractions": [
         "Anne Frank House",
         "Van Gogh Museum",
@@ -66780,7 +66780,7 @@
       "name": "Singapore",
       "country": "Singapore",
       "description": "The Lion City",
-      "price":"$850",
+      "price":"4850",
       "attractions": [
         "Marina Bay Sands",
         "Gardens by the Bay",
@@ -66794,7 +66794,7 @@
       "name": "Istanbul",
       "country": "Turkey",
       "description": "Where East Meets West",
-      "price":"$678",
+      "price":"9678",
       "attractions": [
         "Hagia Sophia",
         "Blue Mosque",
@@ -66808,7 +66808,7 @@
       "name": "Kyoto",
       "country": "Japan",
       "description": "City of a Thousand Temples",
-      "price":"$984",
+      "price":"7984",
       "attractions": [
         "Kinkaku-ji (Golden Pavilion)",
         "Fushimi Inari Shrine",
@@ -66822,7 +66822,7 @@
       "name": "Marrakech",
       "country": "Morocco",
       "description": "The Red City",
-      "price":"$369",
+      "price":"7369",
       "attractions": [
         "Jardin Majorelle",
         "Djemaa el Fna",
@@ -66836,7 +66836,7 @@
       "name": "Buenos Aires",
       "country": "Argentina",
       "description": "The Paris of South America",
-      "price":"$850",
+      "price":"3850",
       "attractions": [
         "La Boca Neighborhood",
         "Recoleta Cemetery",
@@ -66850,7 +66850,7 @@
       "name": "Vancouver",
       "country": "Canada",
       "description": "City of Glass",
-      "price":"$874",
+      "price":"9874",
       "attractions": [
         "Stanley Park",
         "Capilano Suspension Bridge",
@@ -66864,7 +66864,7 @@
       "name": "Seoul",
       "country": "South Korea",
       "description": "The Soul of Asia",
-      "price":"$456",
+      "price":"4456",
       "attractions": [
         "Gyeongbokgung Palace",
         "Myeongdong Shopping Street",
@@ -66878,7 +66878,7 @@
       "name": "Copenhagen",
       "country": "Denmark",
       "description": "The City of Cyclists",
-      "price":"$756",
+      "price":"5756",
       "attractions": [
         "The Little Mermaid",
         "Tivoli Gardens",
@@ -66892,7 +66892,7 @@
       "name": "Bariloche",
       "country": "Argentina",
       "description": "The Swiss Argentine",
-      "price":"$987",
+      "price":"9987",
       "attractions": [
         "Civic Center",
         "Cerro Campanario",
@@ -66906,7 +66906,7 @@
       "name": "Edinburgh",
       "country": "United Kingdom",
       "description": "The Athens of the North",
-      "price":"$567",
+      "price":"7567",
       "attractions": [
         "Edinburgh Castle",
         "Royal Mile",
@@ -66920,7 +66920,7 @@
       "name": "Krakow",
       "country": "Poland",
       "description": "The Royal Capital",
-      "price":"$657",
+      "price":"9657",
       "attractions": [
         "Wawel Castle",
         "Main Market Square",
@@ -66934,7 +66934,7 @@
       "name": "Hanoi",
       "country": "Vietnam",
       "description": "City of Lakes",
-      "price":"$100",
+      "price":"6100",
       "attractions": [
         "Hoan Kiem Lake",
         "Temple of Literature",
@@ -66948,7 +66948,7 @@
       "name": "Munich",
       "country": "Germany",
       "description": "The Capital of Bavaria",
-      "price":"$1050",
+      "price":"1050",
       "attractions": [
         "Marienplatz",
         "Nymphenburg Palace",
@@ -66962,7 +66962,7 @@
       "name": "Cape Town",
       "country": "South Africa",
       "description": "The Mother City",
-      "price":"$684",
+      "price":"8684",
       "attractions": [
         "Table Mountain",
         "Cape of Good Hope",
@@ -66976,7 +66976,7 @@
       "name": "Oslo",
       "country": "Norway",
       "description": "The Tiger City",
-      "price":"$1020",
+      "price":"1020",
       "attractions": [
         "Vigeland Park",
         "Royal Palace",
@@ -66990,7 +66990,7 @@
       "name": "Dublin",
       "country": "Ireland",
       "description": "The Fair City",
-      "price":"$567",
+      "price":"8567",
       "attractions": [
         "Guinness Storehouse",
         "Dublin Castle",
@@ -67004,7 +67004,7 @@
       "name": "Stockholm",
       "country": "sweden",
       "description": "The Venice of the North",
-      "price":"$756",
+      "price":"7756",
       "attractions": [
         "Gamla Stan",
         "Vasa Museum",
@@ -67018,7 +67018,7 @@
       "name": "Krabi",
       "country": "Thailand",
       "description": "The Gem of Andaman",
-      "price":"$900",
+      "price":"5900",
       "attractions": [
         "Railay Beach",
         "Phi Phi Islands",
@@ -67032,7 +67032,7 @@
       "name": "Montreal",
       "country": "Canada",
       "description": "The City of Saints",
-      "price":"$999",
+      "price":"6999",
       "attractions": [
         "Old Montreal",
         "Mont Royal",
@@ -67046,7 +67046,7 @@
       "name": "Budapest",
       "country": "Hungary",
       "description": "The Pearl of the Danube",
-      "price":"$568",
+      "price":"5568",
       "attractions": [
         "Buda Castle",
         "Chain Bridge",
@@ -67060,7 +67060,7 @@
       "name": "Edmonton",
       "country": "Canada",
       "description": "Gateway to the North",
-      "price":"$102",
+      "price":"1102",
       "attractions": [
         "West Edmonton Mall",
         "Fort Edmonton Park",
@@ -67074,7 +67074,7 @@
       "name": "Cologne",
       "country": "Germany",
       "description": "City of the Cologne Cathedral",
-      "price":"$688",
+      "price":"2688",
       "attractions": [
         "Cologne Cathedral",
         "Hohenzollern Bridge",
@@ -67088,7 +67088,7 @@
       "name": "Cape Town",
       "country": "South Africa",
       "description": "The Mother City",
-      "price":"$546",
+      "price":"7546",
       "attractions": [
         "Table Mountain",
         "Cape of Good Hope",
@@ -67102,7 +67102,7 @@
       "name": "Ho Chi Minh City",
       "country": "Vietnam",
       "description": "The Pearl of the Far East",
-      "price":"$765",
+      "price":"3765",
       "attractions": [
         "Ben Thanh Market",
         "Notre-Dame Cathedral Basilica of Saigon",
@@ -67116,7 +67116,7 @@
       "name": "Reykjavik",
       "country": "Iceland",
       "description": "The Land of Fire and Ice",
-      "price":"$456",
+      "price":"3456",
       "attractions": [
         "Hallgrímskirkja",
         "Blue Lagoon",
@@ -67130,7 +67130,7 @@
       "name": "Bangkok",
       "country": "Thailand",
       "description": "The City of Angels",
-      "price":"$235",
+      "price":"2235",
       "attractions": [
         "Grand Palace",
         "Wat Arun",
@@ -67145,7 +67145,7 @@
       "name": "Vienna",
       "country": "Australia",
       "description": "The City of Music",
-      "price":"$543",
+      "price":"2543",
       "attractions": [
         "Schönbrunn Palace",
         "St. Stephen's Cathedral",
@@ -67159,7 +67159,7 @@
       "name": "Beijing",
       "country": "China",
       "description": "The Forbidden City",
-      "price":"$123",
+      "price":"2123",
       "attractions": [
         "Great Wall of China",
         "Temple of Heaven",
@@ -67173,7 +67173,7 @@
       "name": "Sydney",
       "country": "Sydney",
       "description": "The Harbour City",
-      "price":"$954",
+      "price":"3954",
       "attractions": [
         "Sydney Opera House",
         "Bondi Beach",
@@ -67187,7 +67187,7 @@
       "name": "Barcelona",
       "country": "Spain",
       "description": "The City of Gaudi",
-      "price":"$683",
+      "price":"4683",
       "attractions": [
         "Sagrada Familia",
         "Park Güell",
@@ -67201,7 +67201,7 @@
       "name": "Cairo",
       "country": "Egypt",
       "description": "The City of a Thousand Minarets",
-      "price":"$542",
+      "price":"4542",
       "attractions": [
         "Giza Pyramids",
         "The Sphinx",
@@ -67215,7 +67215,7 @@
       "name": "Dubai",
       "country" :"Dubai",
       "description": "The City of Gold",
-      "price":"$734",
+      "price":"4734",
       "attractions": [
         "Burj Khalifa",
         "Dubai Mall",
@@ -67229,21 +67229,21 @@
       "name": "Venice",
       "country": "Italy",
       "description": "The Floating City",
-      "price":"$1000",
+      "price":"1000",
       "attractions": [
         "St. Mark's Basilica",
         "Grand Canal",
         "Rialto Bridge"
       ],
       "image": "https://thinkorangemagazine.com/wp-content/uploads/2018/06/30-photo-workshop-adventures-italy-venice.jpg",
-      "hotelPhoto": ""
+      "hotelPhoto": "https://images.pexels.com/photos/1134176/pexels-photo-1134176.jpeg?cs=srgb&dl=dug-out-pool-hotel-pool-1134176.jpg&fm=jpg"
     },
     {
       "id": 53,
       "name": "Brisbane",
       "country": "Australia",
       "description": "The River City",
-      "price":"$689",
+      "price":"4689",
       "attractions": [
         "South Bank Parklands",
         "Story Bridge",
@@ -67257,7 +67257,7 @@
       "name": "Athens",
       "country": "Greece",
       "description": "The Cradle of Western Civilization",
-      "price":"$788",
+      "price":"6788",
       "attractions": [
         "Acropolis",
         "Parthenon",
@@ -67271,7 +67271,7 @@
       "name": "Lisbon",
       "country": "portugal",
       "description": "The City of Seven Hills",
-      "price":"$695",
+      "price":"6695",
       "attractions": [
         "Belem Tower",
         "Jerónimos Monastery",
@@ -67285,7 +67285,7 @@
       "name": "Dubrovnik",
       "country": "Croatia",
       "description": "The Pearl of the Adriatic",
-      "price":"$563",
+      "price":"4563",
       "attractions": [
         "Old Town Walls",
         "Stradun",
@@ -67299,7 +67299,7 @@
       "name": "Granada",
       "country": "Spain",
       "description": "The Jewel of Andalusia",
-      "price":"$632",
+      "price":"6632",
       "attractions": [
         "Alhambra",
         "Generalife Gardens",
@@ -67313,7 +67313,7 @@
       "name": "Riga",
       "country": "latvia",
       "description": "The Paris of the North",
-      "price":"$783",
+      "price":"3783",
       "attractions": [
         "Riga Castle",
         "Old Town",
@@ -67327,7 +67327,7 @@
       "name": "Prague",
       "country": "Czech Republic",
       "description": "The City of a Hundred Spires",
-      "price":"$632",
+      "price":"4632",
       "attractions": [
         "Charles Bridge",
         "Prague Castle",
@@ -67341,7 +67341,7 @@
       "name": "Marrakech",
       "country": "Marrakech",
       "description": "The Red City",
-      "price":"$356",
+      "price":"3356",
       "attractions": [
         "Jardin Majorelle",
         "Djemaa el Fna",
@@ -67355,7 +67355,7 @@
       "name": "Kyoto",
       "country": "Japan",
       "description": "City of a Thousand Temples",
-      "price":"$500",
+      "price":"3500",
       "attractions": [
         "Kinkaku-ji (Golden Pavilion)",
         "Fushimi Inari Shrine",
@@ -67369,7 +67369,7 @@
       "name": "Melbourne",
       "country": "Australia",
       "description": "The Cultural Capital of Australia",
-      "price":"$643",
+      "price":"3643",
       "attractions": [
         "Federation Square",
         "Royal Botanic Gardens",
@@ -67383,7 +67383,7 @@
       "name": "Rio de Janeiro",
       "country": "Brazil",
       "description": "The Marvelous City",
-      "price":"$788",
+      "price":"2788",
       "attractions": [
         "Christ the Redeemer",
         "Copacabana Beach",
@@ -67396,7 +67396,7 @@
       "id": 64,
       "name": "Copenhagen",
       "country": "Denmark",
-      "price":"$842",
+      "price":"6842",
       "description": "The City of Cyclists",
       "attractions": [
         "The Little Mermaid",
@@ -67410,7 +67410,7 @@
       "id": 65,
       "name": "Bariloche",
       "country": "Argentina",
-      "price":"$677",
+      "price":"7677",
       "description": "The Swiss Argentine",
       "attractions": [
         "Civic Center",
@@ -67424,7 +67424,7 @@
       "id": 66,
       "name": "Buenos Aires",
       "country": "Argentina",
-      "price":"$565",
+      "price":"6565",
       "description": "The Paris of South America",
       "attractions": [
         "La Boca Neighborhood",
@@ -67438,7 +67438,7 @@
       "id": 67,
       "name": "Vancouver",
       "country": "Canada",
-      "price":"$653",
+      "price":"6653",
       "description": "City of Glass",
       "attractions": [
         "Stanley Park",
